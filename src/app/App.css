@@ -1,0 +1,19 @@
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+}
+main {
+  margin: 0 25px;
+}
+section {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  position : relative;
+}
+.blue {
+  color: #4EA8DE;
+}
+.purple {
+  color: #5E60CE;
+}

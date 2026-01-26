@@ -1,0 +1,19 @@
+.header {
+	background-color: #000;
+	width : 100%;
+	height : 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size : 40px;
+}
+.header_block {
+	display: flex;
+	gap: 10px;
+	font-weight : bold;
+	text-align : center;
+	color: #4EA8DE;
+}
+.header_block span {
+	color: #5E60CE;
+}

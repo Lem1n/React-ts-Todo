@@ -49,8 +49,25 @@
 .todo-item_text {
 	font-size : 14px;
 }
+.todo-item.active .todo-item_checkbox::after{
+	content: "✔";
+	position : absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.todo-item.active .todo-item_checkbox{
+	border: #5E60CE solid 1px;
+	background-color: #5E60CE;
+
+}
 .todo-item_checkbox {
-	margin: 8px 8px 0 0;
+	position : relative;
+	margin: 2px 12px 0 0;
+	border: 3px solid #4EA8DE;
+	border-radius: 15px;
+	width: 24px;
+	height : 24px;
 }
 .todo-item.active .todo-item_title, .todo-item.active .todo-item_text {
 	text-decoration: line-through;

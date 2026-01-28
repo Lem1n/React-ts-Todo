@@ -4,6 +4,7 @@ import type {Todo} from "../../app/types/types.ts";
 import {DDMMYYYY} from "../model/compile-date.ts";
 import * as React from "react";
 
+
 interface FormElements extends HTMLFormControlsCollection {
     title: HTMLInputElement;
     text: HTMLInputElement;
@@ -25,7 +26,7 @@ export function TodoAdd({data, setData, toggleAdd }: TodoAddProps) {
         const form = e.currentTarget;
         const title:string = form.elements.title.value;
         const text:string = form.elements.text.value;
-        const dateInput:string = form.elements.Date.value;
+        const dateInput = form.elements.text.value;
         const dateComleted:string = DDMMYYYY(dateInput);
         const date = new Date()
         const id = Math.max(...data.map(i => i.id),0) + 1;
@@ -34,6 +35,8 @@ export function TodoAdd({data, setData, toggleAdd }: TodoAddProps) {
         toggleAdd()
         form.reset();
     };
+
+
 
     return (
         <div className={'popup'}>

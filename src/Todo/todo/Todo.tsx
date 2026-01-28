@@ -9,7 +9,7 @@ export function Todo ({title, text, Date, DateComplete, completed, id, handleCom
 
     return (
         <div className={`todo-item ${completed ? 'active' : ''}`}>
-            <input type={"checkbox"} onClick={() => handleCompleted(id)} className={'todo-item_checkbox'}/>
+            <button onClick={() => handleCompleted(id)} className={'todo-item_checkbox'}/>
             <div className={'todo-item-content'}>
                 <div className={'todo-item_header'}>
                     <Link to={`/${id}`}><div className={'todo-item_title'}>{title}</div></Link>

@@ -7,7 +7,7 @@ import {Helmet} from "@dr.pogodin/react-helmet";
 export function BoardList () {
     const {id} = useParams<{id: string | undefined}>()
     return (
-        <>
+        <div>
             <Helmet>
                 <title>React todo</title>
             </Helmet>
@@ -17,6 +17,6 @@ export function BoardList () {
                     {id ? <Outlet/> : <TodoList/>}
                 </section>
             </main>
-        </>
+        </div>
     )
 }

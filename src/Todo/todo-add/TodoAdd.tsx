@@ -30,7 +30,6 @@ export function TodoAdd({data, setData, toggleAdd }: TodoAddProps) {
         const title:string = form.elements.title.value;
         const text:string = form.elements.text.value;
         const dateInput = form.elements.Date.value;
-        console.log(form.elements)
         const dateComleted:string = DDMMYYYY(dateInput);
         const date = new Date()
         const maxId = Math.max(...(data.map((i) => i.id as unknown as number)), 0);
@@ -39,7 +38,6 @@ export function TodoAdd({data, setData, toggleAdd }: TodoAddProps) {
         setData([...data, newTodo]);
         toggleAdd()
         form.reset();
-        console.log(data)
     };
 
 

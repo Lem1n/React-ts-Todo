@@ -4,6 +4,9 @@ import type {Todo} from "../../app/types/types.ts";
 import {DDMMYYYY} from "../model/compile-date.ts";
 import * as React from "react";
 
+import exit from '../../assets/svg/exit.svg'
+import plus from '../../assets/svg/plus.svg'
+
 
 interface FormElements extends HTMLFormControlsCollection {
     title: HTMLInputElement;
@@ -44,14 +47,14 @@ export function TodoAdd({data, setData, toggleAdd }: TodoAddProps) {
                 <form className={'popup-form'} onSubmit={addTodo}>
                     <div className={'popup-header'} >
                         <div>Создать задачу</div>
-                        <button onClick={toggleAdd}>x</button>
+                        <button onClick={toggleAdd}><img src={exit} alt={'icon'}/></button>
                     </div>
                     <div className={'popup-inputs'}>
                         <input name="title" type="text" placeholder="Заголовок" required/>
                         <input name="text" type="text" minLength={3} placeholder="Текст" required/>
                         <input name="Date" type="date" placeholder="Дата окончания" />
                     </div>
-                    <button className={'popup-button'} type="submit">Создать</button>
+                    <button className={'popup-button'} type="submit">Создать<img src={plus} alt={'icon'}/></button>
                 </form>
             </div>
         </div>

@@ -1,6 +1,8 @@
 
 import {Link} from "react-router-dom";
 import type {Todo, TodoHandle} from "../../app/types/types.ts";
+import del from '../../assets/svg/delete.svg'
+import edit from '../../assets/svg/edit.svg'
 
 type TodoHandlers = Todo & TodoHandle
 
@@ -19,8 +21,8 @@ export function Todo ({title, text, Date, DateComplete, completed, id, handleCom
                             {DateComplete && <div>Дата окончания: <span className={'blue'}>{DateComplete}</span></div>}
                         </div>
                         <div className={'todo-item-info_tools'}>
-                            <button onClick={() => handleDelete(id)}>У</button>
-                            { !completed && <button onClick={() => handleEdit(id)}>Р</button>}
+                            <button onClick={() => handleDelete(id)}><img src={del} alt={'icon'}/></button>
+                            { !completed && <button onClick={() => handleEdit(id)}><img src={edit} alt={'icon'}/></button>}
                         </div>
                     </div>
                 </div>

@@ -5,6 +5,7 @@ import {TodoEmpty} from "./todo-empty/TodoEmpty.tsx";
 import {useHandleTodo} from "./model/handle-todo.ts";
 import {usePopup} from "../popup/popup-context/popup-context.tsx";
 
+import plus from '../assets/svg/plus.svg'
 
 export function TodoList () {
 
@@ -24,7 +25,7 @@ export function TodoList () {
 
     return (
         <>
-            <button onClick={()=> toggleAdd()} className={"create-btn"}>Создать</button>
+            <button onClick={()=> toggleAdd()} className={"create-btn"}>Создать<img src={plus} alt={'icon'}/></button>
             <div className={"content"}>
                 <div style={{display: 'flex', justifyContent:'space-between'}}>
                     <div className={'content-info blue'}>Всего задач: <span>{data.length}</span></div>

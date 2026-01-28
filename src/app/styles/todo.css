@@ -5,9 +5,14 @@
 	left: 0;
 	width: 100%;
 	height : 52px;
-	text-align: center;
-	background-color: #4EA8DE;
+	background-color: #1E6F9F;
 	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	font-size : 14px;
+	font-weight : 700;
 }
 .content {
 	padding-top: 90px;
@@ -50,11 +55,10 @@
 	font-size : 14px;
 }
 .todo-item.active .todo-item_checkbox::after{
-	content: "✔";
+	content: url("../../assets/svg/check.svg");
 	position : absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
+	left: auto;
+	top: -3px;
 }
 .todo-item.active .todo-item_checkbox{
 	border: #5E60CE solid 1px;
@@ -62,6 +66,7 @@
 
 }
 .todo-item_checkbox {
+	display: flex;
 	position : relative;
 	margin: 2px 12px 0 0;
 	border: 3px solid #4EA8DE;
@@ -88,4 +93,11 @@
 }
 .todo-item-info_tools button{
 	font-size : 12px;
+}
+
+.icon-del {
+	background: url('../../assets/svg/delete.svg') no-repeat;
+}
+.icon-edit {
+	background: url('../../assets/svg/edit.svg') no-repeat;
 }

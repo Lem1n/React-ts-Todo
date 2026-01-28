@@ -32,11 +32,13 @@ export function TodoAdd({data, setData, toggleAdd }: TodoAddProps) {
         const dateInput = form.elements.text.value;
         const dateComleted:string = DDMMYYYY(dateInput);
         const date = new Date()
-        const id = Math.max(...data.map(i => i.id),0) + 1;
+        const maxId = Math.max(...(data.map((i) => i.id as unknown as number)), 0);
+        const id = `${maxId + 1}`;
         const newTodo:Todo = { id: id, title:title, text: text, Date: date.toLocaleDateString(), DateComplete: dateComleted !== 'Invalid Date' ? dateComleted : null,completed: false}
         setData([...data, newTodo]);
         toggleAdd()
         form.reset();
+        console.log(data)
     };
 
 

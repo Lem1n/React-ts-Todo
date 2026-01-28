@@ -1,6 +1,6 @@
 import * as React from "react";
 export interface Todo {
-    id: number,
+    id: string,
     title: string,
     text: string,
     completed: boolean,

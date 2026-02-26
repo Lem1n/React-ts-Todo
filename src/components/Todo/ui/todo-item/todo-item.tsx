@@ -2,6 +2,8 @@ import { Link, useParams } from "react-router-dom";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { useGetTodoQuery } from "../../../../api/model/todo.api.ts";
 import { ROUTES } from "../../../../app/Routes/Routes.ts";
+
+
 export function TodoItem() {
 	const { id }: any = useParams();
 
@@ -12,7 +14,7 @@ export function TodoItem() {
 	if (isLoading) return <div>Загрузка...</div>;
 
 	return (
-		<main>
+		<>
 			<Helmet>
 				<meta name={"description"} content={data.text} />
 				<title>{data.title}</title>
@@ -42,6 +44,6 @@ export function TodoItem() {
 					)}
 				</div>
 			</div>
-		</main>
+		</>
 	);
 }

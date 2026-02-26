@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import type { ITodo } from "../../../../app/types/types";
-import del from "../../../assets/svg/delete.svg";
-import edit from "../../../assets/svg/edit.svg";
+import del from "../../../../assets/svg/delete.svg";
+import edit from "../../../../assets/svg/edit.svg";
 
 import {
 	useDeleteTodoMutation,

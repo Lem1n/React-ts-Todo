@@ -3,8 +3,8 @@ import type { FormEvent } from "react";
 import type { ITodo } from "../../../../app/types/types.ts";
 import { DDMMYYYY } from "../../model/compile-date.ts";
 
-import exit from "../../../assets/svg/exit.svg";
-import plus from "../../../assets/svg/plus.svg";
+import exit from "../../../../assets/svg/exit.svg";
+import plus from "../../../../assets/svg/plus.svg";
 import { useAddTodoMutation } from "../../../../api/model/todo.api.ts";
 import { useGetTodosQuery } from "../../../../api/model/api.ts";
 

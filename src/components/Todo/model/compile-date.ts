@@ -1,4 +1,5 @@
-export const DDMMYYYY = (elem:string):string => {
+export const DDMMYYYY = (elem:string):string|null => {
+    if (elem === "") return null
     return new Date(elem).toLocaleString('ru-RU', {
         day: '2-digit',
         month: '2-digit',

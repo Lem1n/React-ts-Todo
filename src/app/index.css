@@ -13,6 +13,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100lvh;
 }
 * {
   box-sizing: border-box;
@@ -48,4 +49,10 @@ button, input {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+input {
+
+  border: 1px solid #1A1A1A;
+  border-radius: 5px;
 }

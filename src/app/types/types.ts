@@ -1,20 +1,17 @@
-import * as React from "react";
-export interface Todo {
-    id: string,
-    title: string,
-    text: string,
-    completed: boolean,
-    Date: string,
-    DateComplete: string | null,
-}
-export interface TodoHandle {
-    handleDelete: (id:number) => void
-    handleEdit: (id:number) => void
-    handleCompleted: (id:number) => void
-}
-export interface ApiContextValue {
-    data?: Todo[],
-    setData?: React.Dispatch<React.SetStateAction<Todo[]>>,
-    isLoading?: boolean,
-    error?: Error | undefined,
-}
+
+import z from "zod";
+
+export const todoDtoSchema = z.object({
+	id: z.string(),
+	title: z.string(),
+	text: z.string(),
+	completed: z.boolean(),
+	createdAt: z.string(),
+	DateComplete: z.union([z.string(), z.null()]).nullable(),
+});
+
+export type ITodo = z.infer<typeof todoDtoSchema>;
+export type ITodoData = z.infer<typeof todoDtoSchema>;
+
+export const todoListSchema = z.array(todoDtoSchema);
+

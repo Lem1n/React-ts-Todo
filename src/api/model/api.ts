@@ -1,11 +1,22 @@
-const TODO_API = 'https://697731c05b9c0aed1e85aa47.mockapi.io/api/test/todo/'
-import type {Todo} from "../../app/types/types.ts";
-export async function fetchTodo(): Promise<Todo[]> {
-    const res = await fetch(TODO_API);
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { todoListSchema, type ITodo } from "../../app/types/types";
+const baseURL = "https://697731c05b9c0aed1e85aa47.mockapi.io/api/test";
 
-    if (!res.ok) {
-        throw new Error('Ошибка загрузки...');
-    }
+export const api = createApi({
+	reducerPath: "api",
+	tagTypes: ["Todo"],
+	baseQuery: fetchBaseQuery({ baseUrl: baseURL }),
+	endpoints: (builder) => ({
+		getTodos: builder.query<ITodo[], void>({
+			query: () => "/todo",
+			providesTags: () => [
+				{
+					type: "Todo",
+				},
+			],
+			transformResponse: (data: unknown) => todoListSchema.parse(data),
+		}),
+	}),
+});
 
-    return res.json();
-}
+export const { useGetTodosQuery } = api;
